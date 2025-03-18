@@ -5,7 +5,14 @@
 
 <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
   <app-card title="i18nSelectPipe">
-    <p>Greetings {{ client().name }}, es un placer {{client().gender | i18nSelect: invitationMap }} a nuestro evento</p>
+    <p>Saludos {{ client().name }}, es un placer {{client().gender | i18nSelect: invitationMap }} a nuestro evento</p>
     <button (click)="changeClient()" class="btn btn-primary">Change client</button>
+  </app-card>
+
+  <app-card title="i18nPluralPipe">
+    <p>Actualmente {{ clients().length | i18nPlural: clientsMap() }}</p>
+    <button class="btn btn-primary"
+      [disabled]="clients().length === 0"
+      (click)="deleteClient()">Delete client</button>
   </app-card>
 </div>
