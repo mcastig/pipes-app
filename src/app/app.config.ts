@@ -2,7 +2,7 @@ import { ApplicationConfig, LOCALE_ID, provideZoneChangeDetection } from '@angul
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { registerLocaleData } from '@angular/common';
-import localES from '@angular/common/locales/es-mx';
+import localES from '@angular/common/locales/es-MX';
 import localFR from '@angular/common/locales/fr';
 import { LocaleService } from './services/locale.service';
 
