@@ -15,12 +15,12 @@
 <div class="divider my-2"></div>
 
 <section class="my-2">
-  <h1 class="text-2xl font-bold">Custom Pipes in action</h1>
+  <h1 class="text-2xl font-bold">Sort by: XXX Order by: {{ sortBy() }}</h1>
   <div class="flex gap-2 justify-end w-full">
-    <button class="btn btn-primary">By Name</button>
-    <button class="btn btn-accent">By Fly</button>
-    <button class="btn btn-secondary">By Color</button>
-    <button class="btn btn-info">By Creator</button>
+    <button (click)="sortBy.set('name')" class="btn btn-primary">By Name</button>
+    <button (click)="sortBy.set('canFly')" class="btn btn-accent">By Fly</button>
+    <button (click)="sortBy.set('color')" class="btn btn-secondary">By Color</button>
+    <button (click)="sortBy.set('creator')" class="btn btn-info">By Creator</button>
   </div>
 </section>
 
@@ -37,7 +37,7 @@
       </tr>
     </thead>
     <tbody>
-      @for (hero of heroes(); track hero.id; let i = $index) {
+      @for (hero of heroes() | heroSortBy: sortBy(); track hero.id; let i = $index) {
         <tr>
           <td>{{ i + 1 }}</td>
           <td>{{ hero.name }}</td>
